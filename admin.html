@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Upload - UPSC</title>
+    <style>
+        body { font-family: Arial; background: #fff; padding: 40px; }
+        .hidden { display: none; }
+        label, input { display: block; margin-bottom: 10px; }
+        button { padding: 10px 15px; }
+    </style>
+</head>
+<body>
+    <h1>Admin Upload</h1>
+    <div id="login">
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password">
+        <button onclick="checkPassword()">Login</button>
+    </div>
+    <div id="uploadSection" class="hidden">
+        <p>Note: This is a static page. Real file upload requires backend setup.</p>
+        <form>
+            <label for="title">Result Title:</label>
+            <input type="text" id="title" name="title">
+            <label for="file">Upload PDF:</label>
+            <input type="file" id="file" name="file" accept="application/pdf">
+            <button type="submit">Upload (Demo Only)</button>
+        </form>
+    </div>
+    <script>
+        function checkPassword() {
+            const pass = document.getElementById('password').value;
+            if (pass === "upsc.gov.inot") {
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('uploadSection').style.display = 'block';
+            } else {
+                alert("Incorrect password");
+            }
+        }
+    </script>
+</body>
+</html>
